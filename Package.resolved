@@ -52,7 +52,7 @@
       "location" : "https://github.com/Fleuronic/DrumKit",
       "state" : {
         "branch" : "main",
-        "revision" : "df5924146ae5390d7a2450793e6c908e1067f716"
+        "revision" : "63ce61a7a695ae840b3ce38b366bebf0a2fb4683"
       }
     },
     {
@@ -61,7 +61,7 @@
       "location" : "https://github.com/Fleuronic/DrumKitService",
       "state" : {
         "branch" : "main",
-        "revision" : "a103a56047b7bf821b58c747cd214823b67a685c"
+        "revision" : "ffb74170e350bce8cce27cbbd9a53cd10174fe92"
       }
     },
     {
