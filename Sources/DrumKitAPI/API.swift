@@ -4,6 +4,7 @@ import Papyrus
 import Schemata
 import Foundation
 import enum Catenary.Request
+import struct DrumKit.Event
 import struct DrumKit.Corps
 import struct DrumKit.Location
 import struct DrumKit.State
@@ -17,6 +18,7 @@ import protocol Catenary.Fields
 import protocol Catenary.Schematic
 import protocol Caesura.API
 import protocol Caesura.Endpoint
+import protocol DrumKitService.EventFields
 import protocol DrumKitService.CorpsFields
 import protocol DrumKitService.LocationFields
 import protocol DrumKitService.StateFields
@@ -24,6 +26,7 @@ import protocol DrumKitService.VenueFields
 
 public struct API<
 	Endpoint: Caesura.Endpoint,
+	EventSpecifiedFields: EventFields & Fields,
 	CorpsSpecifiedFields: CorpsFields & Fields,
 	LocationSpecifiedFields: LocationFields & Fields,
 	StateSpecifiedFields: StateFields & Fields,
@@ -34,8 +37,20 @@ public struct API<
 
 // MARK: -
 public extension API {
+	func specifyingEventFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		Fields,
+		CorpsSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		VenueSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
 	func specifyingCorpsFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
+		EventSpecifiedFields,
 		Fields,
 		LocationSpecifiedFields,
 		StateSpecifiedFields,
@@ -46,6 +61,7 @@ public extension API {
 
 	func specifyingLocationFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
+		EventSpecifiedFields,
 		CorpsSpecifiedFields,
 		Fields,
 		StateSpecifiedFields,
@@ -56,6 +72,7 @@ public extension API {
 
 	func specifyingStateFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
+		EventSpecifiedFields,
 		CorpsSpecifiedFields,
 		LocationSpecifiedFields,
 		Fields,
@@ -64,9 +81,9 @@ public extension API {
 		.init(endpoint: endpoint)
 	}
 
-	
 	func specifyingVenueFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
+		EventSpecifiedFields,
 		CorpsSpecifiedFields,
 		LocationSpecifiedFields,
 		StateSpecifiedFields,
@@ -84,6 +101,7 @@ public extension API where Endpoint == EndpointAPI {
 
 public extension API<
 	EndpointAPI,
+	Event.IDFields,
 	Corps.IDFields,
 	Location.IDFields,
 	State.IDFields,
@@ -107,6 +125,7 @@ extension API: Schematic {
 	// MARK: Schematic
 	public static var schema: Schema {
 		.init(
+			Event.Identified.self,
 			Corps.Identified.self,
 			Location.Identified.self,
 			State.Identified.self,
@@ -115,10 +134,6 @@ extension API: Schematic {
 			Address.Identified.self,
 			ZIPCode.Identified.self
 		)
-	}
-
-	public static var enumValues: [String] {
-		[]
 	}
 }
 
