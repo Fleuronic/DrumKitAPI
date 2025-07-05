@@ -6,9 +6,11 @@ import Foundation
 import enum Catenary.Request
 import struct DrumKit.Event
 import struct DrumKit.Corps
+import struct DrumKit.Circuit
 import struct DrumKit.Location
 import struct DrumKit.State
 import struct DrumKit.Country
+import struct DrumKit.Show
 import struct DrumKit.Venue
 import struct DrumKit.Address
 import struct DrumKit.ZIPCode
@@ -127,9 +129,11 @@ extension API: Schematic {
 		.init(
 			Event.Identified.self,
 			Corps.Identified.self,
+			Circuit.Identified.self,
 			Location.Identified.self,
 			State.Identified.self,
 			Country.Identified.self,
+			Show.Identified.self,
 			Venue.Identified.self,
 			Address.Identified.self,
 			ZIPCode.Identified.self
