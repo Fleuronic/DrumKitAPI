@@ -14,6 +14,7 @@ import struct DrumKit.Show
 import struct DrumKit.Venue
 import struct DrumKit.Address
 import struct DrumKit.ZIPCode
+import struct DrumKit.Slot
 import struct Catenary.Schema
 import struct Caesura.EndpointAPI
 import protocol Catenary.Fields
@@ -25,6 +26,7 @@ import protocol DrumKitService.CorpsFields
 import protocol DrumKitService.LocationFields
 import protocol DrumKitService.StateFields
 import protocol DrumKitService.VenueFields
+import protocol DrumKitService.SlotFields
 
 public struct API<
 	Endpoint: Caesura.Endpoint,
@@ -32,7 +34,8 @@ public struct API<
 	CorpsSpecifiedFields: CorpsFields & Fields,
 	LocationSpecifiedFields: LocationFields & Fields,
 	StateSpecifiedFields: StateFields & Fields,
-	VenueSpecifiedFields: VenueFields & Fields
+	VenueSpecifiedFields: VenueFields & Fields,
+	SlotSpecifiedFields: SlotFields & Fields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
@@ -45,7 +48,8 @@ public extension API {
 		CorpsSpecifiedFields,
 		LocationSpecifiedFields,
 		StateSpecifiedFields,
-		VenueSpecifiedFields
+		VenueSpecifiedFields,
+		SlotSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -56,7 +60,8 @@ public extension API {
 		Fields,
 		LocationSpecifiedFields,
 		StateSpecifiedFields,
-		VenueSpecifiedFields
+		VenueSpecifiedFields,
+		SlotSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -67,7 +72,8 @@ public extension API {
 		CorpsSpecifiedFields,
 		Fields,
 		StateSpecifiedFields,
-		VenueSpecifiedFields
+		VenueSpecifiedFields,
+		SlotSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -78,7 +84,8 @@ public extension API {
 		CorpsSpecifiedFields,
 		LocationSpecifiedFields,
 		Fields,
-		VenueSpecifiedFields
+		VenueSpecifiedFields,
+		SlotSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -89,6 +96,19 @@ public extension API {
 		CorpsSpecifiedFields,
 		LocationSpecifiedFields,
 		StateSpecifiedFields,
+		Fields,
+		SlotSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingSlotFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		CorpsSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		VenueSpecifiedFields,
 		Fields
 	> {
 		.init(endpoint: endpoint)
@@ -107,7 +127,8 @@ public extension API<
 	Corps.IDFields,
 	Location.IDFields,
 	State.IDFields,
-	Venue.IDFields
+	Venue.IDFields,
+	Slot.IDFields
 > {
 	init(apiKey: String) {
 		self.init(key: apiKey)
