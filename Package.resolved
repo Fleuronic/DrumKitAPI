@@ -1,5 +1,5 @@
 {
-  "originHash" : "5a34858307e77c0a0b7a3df477aab9b5915d571ffae3a36bc7b3714f5db70b5e",
+  "originHash" : "292f1abd442c3a315e15929ea8dd4a9f77bf060e8ceebd1ef2f5521ea64145ea",
   "pins" : [
     {
       "identity" : "caesura",
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "e42054d1cffd0f3c7bc4e64898099ce6534a8bc6"
+        "revision" : "fd309f88dbe68f6cb9e7ddc2e7ed17d522e109c9"
       }
     },
     {
@@ -25,7 +25,7 @@
       "location" : "https://github.com/Fleuronic/Catenary",
       "state" : {
         "branch" : "main",
-        "revision" : "224c53aee87e9e5ea444d0ed8844fbeed00ed5cc"
+        "revision" : "90797585c762fd22505be4bcc9ebbb55f92c3fb7"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/Fleuronic/Catenoid",
       "state" : {
         "branch" : "main",
-        "revision" : "52333639ae306dab59c072c0c1c4a31d6eb6e418"
+        "revision" : "e299b699140c6bf14774af19fb66ba83008c88b4"
       }
     },
     {
@@ -52,7 +52,7 @@
       "location" : "https://github.com/Fleuronic/DrumKit",
       "state" : {
         "branch" : "main",
-        "revision" : "63ce61a7a695ae840b3ce38b366bebf0a2fb4683"
+        "revision" : "d2590dc8110a2f1eb9cd145de0032fa738a2f641"
       }
     },
     {
@@ -61,7 +61,7 @@
       "location" : "https://github.com/Fleuronic/DrumKitService",
       "state" : {
         "branch" : "main",
-        "revision" : "ffb74170e350bce8cce27cbbd9a53cd10174fe92"
+        "revision" : "0c11904810b8e8af35a382b70894900017eea7d0"
       }
     },
     {
