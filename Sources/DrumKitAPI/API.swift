@@ -14,7 +14,9 @@ import struct DrumKit.Show
 import struct DrumKit.Venue
 import struct DrumKit.Address
 import struct DrumKit.ZIPCode
-import struct DrumKit.Slot
+import struct DrumKit.ZIPCode
+import struct DrumKit.Performance
+import struct DrumKit.Feature
 import struct Catenary.Schema
 import struct Caesura.EndpointAPI
 import protocol Catenary.Fields
@@ -26,7 +28,7 @@ import protocol DrumKitService.CorpsFields
 import protocol DrumKitService.LocationFields
 import protocol DrumKitService.StateFields
 import protocol DrumKitService.VenueFields
-import protocol DrumKitService.SlotFields
+import protocol DrumKitService.ZIPCodeFields
 
 public struct API<
 	Endpoint: Caesura.Endpoint,
@@ -35,7 +37,7 @@ public struct API<
 	LocationSpecifiedFields: LocationFields & Fields,
 	StateSpecifiedFields: StateFields & Fields,
 	VenueSpecifiedFields: VenueFields & Fields,
-	SlotSpecifiedFields: SlotFields & Fields
+	ZIPCodeSpecifiedFields: ZIPCodeFields & Fields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
@@ -49,7 +51,7 @@ public extension API {
 		LocationSpecifiedFields,
 		StateSpecifiedFields,
 		VenueSpecifiedFields,
-		SlotSpecifiedFields
+		ZIPCodeSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -61,7 +63,7 @@ public extension API {
 		LocationSpecifiedFields,
 		StateSpecifiedFields,
 		VenueSpecifiedFields,
-		SlotSpecifiedFields
+		ZIPCodeSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -73,7 +75,7 @@ public extension API {
 		Fields,
 		StateSpecifiedFields,
 		VenueSpecifiedFields,
-		SlotSpecifiedFields
+		ZIPCodeSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -85,7 +87,7 @@ public extension API {
 		LocationSpecifiedFields,
 		Fields,
 		VenueSpecifiedFields,
-		SlotSpecifiedFields
+		ZIPCodeSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -97,12 +99,12 @@ public extension API {
 		LocationSpecifiedFields,
 		StateSpecifiedFields,
 		Fields,
-		SlotSpecifiedFields
+		ZIPCodeSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
 
-	func specifyingSlotFields<Fields>(_: Fields.Type) -> API<
+	func specifyingZIPCodeFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
 		EventSpecifiedFields,
 		CorpsSpecifiedFields,
@@ -128,7 +130,7 @@ public extension API<
 	Location.IDFields,
 	State.IDFields,
 	Venue.IDFields,
-	Slot.IDFields
+	ZIPCode.IDFields
 > {
 	init(apiKey: String) {
 		self.init(key: apiKey)
@@ -157,7 +159,10 @@ extension API: Schematic {
 			Show.Identified.self,
 			Venue.Identified.self,
 			Address.Identified.self,
-			ZIPCode.Identified.self
+			ZIPCode.Identified.self,
+			ZIPCode.Identified.self,
+			Performance.Identified.self,
+			Feature.Identified.self
 		)
 	}
 }
