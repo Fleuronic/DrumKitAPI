@@ -14,8 +14,9 @@ import struct DrumKit.Show
 import struct DrumKit.Venue
 import struct DrumKit.Address
 import struct DrumKit.ZIPCode
-import struct DrumKit.ZIPCode
+import struct DrumKit.Slot
 import struct DrumKit.Performance
+import struct DrumKit.Placement
 import struct DrumKit.Feature
 import struct Catenary.Schema
 import struct Caesura.EndpointAPI
@@ -160,9 +161,18 @@ extension API: Schematic {
 			Venue.Identified.self,
 			Address.Identified.self,
 			ZIPCode.Identified.self,
-			ZIPCode.Identified.self,
+			Slot.Identified.self,
 			Performance.Identified.self,
-			Feature.Identified.self
+			Placement.Identified.self,
+			Feature.Identified.self,
+			[Corps.Identified].self,
+			[Location.Identified].self,
+			[State.Identified].self,
+			[Country.Identified].self,
+			[Slot.Identified].self,
+			[Performance.Identified].self,
+			[Placement.Identified].self,
+			[Feature.Identified].self
 		)
 	}
 }
