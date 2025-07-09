@@ -9,6 +9,7 @@ import protocol DrumKitService.CircuitFields
 import protocol DrumKitService.LocationFields
 import protocol DrumKitService.ShowFields
 import protocol DrumKitService.VenueFields
+import protocol DrumKitService.SlotFields
 
 extension Event.Identified: Catenary.Deserializable {
 	public typealias Container = KeyedDecodingContainer<Path>
@@ -48,5 +49,9 @@ public extension Event.Identified.Container {
 
 	func venue<T: VenueFields & Fields>() -> T? {
 		decode(for: .venue)
+	}
+	
+	func slots<T: SlotFields & Fields>() -> [T] {
+		decode(for: .slots)
 	}
 }
