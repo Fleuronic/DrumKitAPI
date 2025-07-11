@@ -1,5 +1,6 @@
 import Foundation
 import struct DrumKit.Slot
+import struct DrumKit.Time
 import struct DrumKit.Performance
 import struct DrumKit.Feature
 import struct DrumKitService.IdentifiedSlot
@@ -19,17 +20,8 @@ extension Slot.Identified: Catenary.Deserializable {
 
 // MARK: -
 public extension Slot.Identified.Container {
-	var time: TimeInterval? {
-		guard let timeString: String = decode(for: .time) else { return nil }
-
-		let formatString: Date.FormatString = "\(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .zeroBased)):\(minute: .twoDigits):\(second: .twoDigits)\(timeZone: .iso8601(.short))"
-		let formatStyle = Date.VerbatimFormatStyle(
-			format: formatString,
-			timeZone: .init(secondsFromGMT: 0)!,
-			calendar: .current
-		)
-
-		return try! Date(timeString, strategy: formatStyle.parseStrategy).timeIntervalSince1970
+	var time: Time? {
+		decode(for: .time)
 	}
 
 	var performanceContainer: Performance.Identified.Container? {
