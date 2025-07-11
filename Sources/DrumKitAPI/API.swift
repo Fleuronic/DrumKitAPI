@@ -6,6 +6,7 @@ import Foundation
 import enum Catenary.Request
 import struct DrumKit.Event
 import struct DrumKit.Corps
+import struct DrumKit.Ensemble
 import struct DrumKit.Circuit
 import struct DrumKit.Location
 import struct DrumKit.State
@@ -17,6 +18,7 @@ import struct DrumKit.ZIPCode
 import struct DrumKit.Slot
 import struct DrumKit.Performance
 import struct DrumKit.Placement
+import struct DrumKit.Division
 import struct DrumKit.Feature
 import struct Catenary.Schema
 import struct Caesura.EndpointAPI
@@ -153,6 +155,7 @@ extension API: Schematic {
 		.init(
 			Event.Identified.self,
 			Corps.Identified.self,
+			Ensemble.Identified.self,
 			Circuit.Identified.self,
 			Location.Identified.self,
 			State.Identified.self,
@@ -164,14 +167,17 @@ extension API: Schematic {
 			Slot.Identified.self,
 			Performance.Identified.self,
 			Placement.Identified.self,
+			Division.Identified.self,
 			Feature.Identified.self,
 			[Corps.Identified].self,
+			[Ensemble.Identified].self,
 			[Location.Identified].self,
 			[State.Identified].self,
 			[Country.Identified].self,
 			[Slot.Identified].self,
 			[Performance.Identified].self,
 			[Placement.Identified].self,
+			[Division.Identified].self,
 			[Feature.Identified].self
 		)
 	}
