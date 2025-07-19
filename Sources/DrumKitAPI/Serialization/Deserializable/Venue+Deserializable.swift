@@ -29,7 +29,7 @@ public extension Venue.Identified.Container {
 		try! nestedContainer(keyedBy: Address.Identified.Path.self, forKey: .address)
 	}
 
-	func address<T: AddressFields & Fields>() throws -> T {
+	func address<T: AddressFields & Fields>() -> T {
 		decode(for: .address)
 	}
 }

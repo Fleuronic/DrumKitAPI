@@ -25,7 +25,7 @@ public extension Location.Identified.Container {
 		try! nestedContainer(keyedBy: State.Identified.Path.self, forKey: .state)
 	}
 
-	func state<T: StateFields & Fields>() throws -> T {
+	func state<T: StateFields & Fields>() -> T {
 		decode(for: .state)
 	}
 }
