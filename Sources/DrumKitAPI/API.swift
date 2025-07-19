@@ -28,19 +28,11 @@ import protocol Caesura.API
 import protocol Caesura.Endpoint
 import protocol DrumKitService.EventFields
 import protocol DrumKitService.CorpsFields
-import protocol DrumKitService.LocationFields
-import protocol DrumKitService.StateFields
-import protocol DrumKitService.VenueFields
-import protocol DrumKitService.ZIPCodeFields
 
 public struct API<
 	Endpoint: Caesura.Endpoint,
 	EventSpecifiedFields: EventFields & Fields,
-	CorpsSpecifiedFields: CorpsFields & Fields,
-	LocationSpecifiedFields: LocationFields & Fields,
-	StateSpecifiedFields: StateFields & Fields,
-	VenueSpecifiedFields: VenueFields & Fields,
-	ZIPCodeSpecifiedFields: ZIPCodeFields & Fields
+	CorpsSpecifiedFields: CorpsFields & Fields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
@@ -50,11 +42,7 @@ public extension API {
 	func specifyingEventFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
 		Fields,
-		CorpsSpecifiedFields,
-		LocationSpecifiedFields,
-		StateSpecifiedFields,
-		VenueSpecifiedFields,
-		ZIPCodeSpecifiedFields
+		CorpsSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -62,58 +50,6 @@ public extension API {
 	func specifyingCorpsFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
 		EventSpecifiedFields,
-		Fields,
-		LocationSpecifiedFields,
-		StateSpecifiedFields,
-		VenueSpecifiedFields,
-		ZIPCodeSpecifiedFields
-	> {
-		.init(endpoint: endpoint)
-	}
-
-	func specifyingLocationFields<Fields>(_: Fields.Type) -> API<
-		Endpoint,
-		EventSpecifiedFields,
-		CorpsSpecifiedFields,
-		Fields,
-		StateSpecifiedFields,
-		VenueSpecifiedFields,
-		ZIPCodeSpecifiedFields
-	> {
-		.init(endpoint: endpoint)
-	}
-
-	func specifyingStateFields<Fields>(_: Fields.Type) -> API<
-		Endpoint,
-		EventSpecifiedFields,
-		CorpsSpecifiedFields,
-		LocationSpecifiedFields,
-		Fields,
-		VenueSpecifiedFields,
-		ZIPCodeSpecifiedFields
-	> {
-		.init(endpoint: endpoint)
-	}
-
-	func specifyingVenueFields<Fields>(_: Fields.Type) -> API<
-		Endpoint,
-		EventSpecifiedFields,
-		CorpsSpecifiedFields,
-		LocationSpecifiedFields,
-		StateSpecifiedFields,
-		Fields,
-		ZIPCodeSpecifiedFields
-	> {
-		.init(endpoint: endpoint)
-	}
-
-	func specifyingZIPCodeFields<Fields>(_: Fields.Type) -> API<
-		Endpoint,
-		EventSpecifiedFields,
-		CorpsSpecifiedFields,
-		LocationSpecifiedFields,
-		StateSpecifiedFields,
-		VenueSpecifiedFields,
 		Fields
 	> {
 		.init(endpoint: endpoint)
@@ -129,11 +65,7 @@ public extension API where Endpoint == EndpointAPI {
 public extension API<
 	EndpointAPI,
 	Event.IDFields,
-	Corps.IDFields,
-	Location.IDFields,
-	State.IDFields,
-	Venue.IDFields,
-	ZIPCode.IDFields
+	Corps.IDFields
 > {
 	init(apiKey: String) {
 		self.init(key: apiKey)
