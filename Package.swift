@@ -16,7 +16,6 @@ let package = Package(
 		),
 	],
 	dependencies: [
-		// .package(path: "../DrumKitService"),
 		.package(url: "https://github.com/Fleuronic/DrumKitService", branch: "main")
 	],
 	targets: [
