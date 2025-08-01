@@ -25,7 +25,7 @@ public extension State.Identified.Container {
 		try! nestedContainer(keyedBy: Country.Identified.Path.self, forKey: .country)
 	}
 
-	func country<T: CountryFields & Fields>() throws -> T {
+	func country<T: CountryFields & Fields>() -> T {
 		decode(for: .country)
 	}
 }
