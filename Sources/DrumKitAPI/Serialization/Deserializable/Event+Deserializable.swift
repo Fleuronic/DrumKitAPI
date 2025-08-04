@@ -14,8 +14,8 @@ import protocol DrumKitService.SlotFields
 extension Event.Identified: Catenary.Deserializable {
 	public typealias Container = KeyedDecodingContainer<Path>
 
-	public static func deserialized(from decoder: any Decoder) -> (ID, Container) {
-		try! (IDFields(from: decoder).id, decoder.container(keyedBy: Path.self))
+	public static func deserialized(from decoder: any Decoder) throws -> (ID, Container) {
+		try (IDFields(from: decoder).id, decoder.container(keyedBy: Path.self))
 	}
 }
 
@@ -35,12 +35,12 @@ public extension Event.Identified.Container {
 		try? nestedContainer(keyedBy: Show.Identified.Path.self, forKey: .show)
 	}
 
-	func circuit<T: CircuitFields & Fields>() -> T? {
-		decode(for: .circuit)
-	}
-
 	func location<T: LocationFields & Fields>() -> T {
 		decode(for: .location)
+	}
+
+	func circuit<T: CircuitFields & Fields>() -> T? {
+		decode(for: .circuit)
 	}
 
 	func show<T: ShowFields & Fields>() -> T? {

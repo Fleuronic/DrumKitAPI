@@ -1,11 +1,11 @@
 import Foundation
-import struct DrumKit.Show
+import struct DrumKit.Circuit
+import struct DrumKitService.IdentifiedCircuit
 import struct Catena.IDFields
 import protocol Catenary.Fields
 import protocol Catenary.Deserializable
-import protocol DrumKitService.LocationFields
 
-extension Show.Identified: Catenary.Deserializable {
+extension Circuit.Identified: Catenary.Deserializable {
 	public typealias Container = KeyedDecodingContainer<Path>
 
 	public static func deserialized(from decoder: any Decoder) throws -> (ID, Container) {
@@ -14,8 +14,12 @@ extension Show.Identified: Catenary.Deserializable {
 }
 
 // MARK: -
-public extension Show.Identified.Container {
+public extension Circuit.Identified.Container {
 	var name: String {
 		decode(for: .name)
+	}
+
+	var abbreviation: String {
+		decode(for: .abbreviation)
 	}
 }

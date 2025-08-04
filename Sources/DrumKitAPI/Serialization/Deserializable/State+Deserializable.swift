@@ -10,8 +10,8 @@ import protocol DrumKitService.CountryFields
 extension State.Identified: Catenary.Deserializable {
 	public typealias Container = KeyedDecodingContainer<Path>
 
-	public static func deserialized(from decoder: any Decoder) -> (ID, Container) {
-		try! (IDFields(from: decoder).id, decoder.container(keyedBy: Path.self))
+	public static func deserialized(from decoder: any Decoder) throws -> (ID, Container) {
+		try (IDFields(from: decoder).id, decoder.container(keyedBy: Path.self))
 	}
 }
 
