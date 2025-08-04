@@ -1,37 +1,26 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import DrumKit
+import DrumKitService
 import Papyrus
 import Schemata
 import Foundation
 import enum Catenary.Request
-import struct DrumKit.Event
-import struct DrumKit.Corps
-import struct DrumKit.Ensemble
-import struct DrumKit.Circuit
-import struct DrumKit.Location
-import struct DrumKit.State
-import struct DrumKit.Country
-import struct DrumKit.Show
-import struct DrumKit.Venue
-import struct DrumKit.Address
-import struct DrumKit.ZIPCode
-import struct DrumKit.Slot
-import struct DrumKit.Performance
-import struct DrumKit.Placement
-import struct DrumKit.Division
-import struct DrumKit.Feature
 import struct Catenary.Schema
 import struct Caesura.EndpointAPI
 import protocol Catenary.Fields
 import protocol Catenary.Schematic
 import protocol Caesura.API
 import protocol Caesura.Endpoint
-import protocol DrumKitService.EventFields
-import protocol DrumKitService.CorpsFields
 
 public struct API<
 	Endpoint: Caesura.Endpoint,
 	EventSpecifiedFields: EventFields & Fields,
+	LocationSpecifiedFields: LocationFields & Fields,
+	StateSpecifiedFields: StateFields & Fields,
+	CountrySpecifiedFields: CountryFields & Fields,
+	CircuitSpecifiedFields: CircuitFields & Fields,
+	ShowSpecifiedFields: ShowFields & Fields,
 	CorpsSpecifiedFields: CorpsFields & Fields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
@@ -42,6 +31,76 @@ public extension API {
 	func specifyingEventFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
 		Fields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		CorpsSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingLocationFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		Fields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		CorpsSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingStateFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		Fields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		CorpsSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingCountryFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		Fields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		CorpsSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingCircuitFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		Fields,
+		ShowSpecifiedFields,
+		CorpsSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingShowFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		Fields,
 		CorpsSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
@@ -50,6 +109,11 @@ public extension API {
 	func specifyingCorpsFields<Fields>(_: Fields.Type) -> API<
 		Endpoint,
 		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
 		Fields
 	> {
 		.init(endpoint: endpoint)
@@ -65,6 +129,11 @@ public extension API where Endpoint == EndpointAPI {
 public extension API<
 	EndpointAPI,
 	Event.IDFields,
+	Location.IDFields,
+	State.IDFields,
+	Country.IDFields,
+	Circuit.IDFields,
+	Show.IDFields,
 	Corps.IDFields
 > {
 	init(apiKey: String) {
