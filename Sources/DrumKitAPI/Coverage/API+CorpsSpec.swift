@@ -7,4 +7,5 @@ import protocol DrumKitService.CorpsSpec
 
 extension API: CorpsSpec where CorpsSpecifiedFields: Fields<Corps.Identified> {
 	public typealias CorpsList = Results<CorpsSpecifiedFields>
+	public typealias CorpsFetch = SingleResult<CorpsSpecifiedFields?>
 }
