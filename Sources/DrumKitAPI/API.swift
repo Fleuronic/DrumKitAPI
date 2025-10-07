@@ -26,7 +26,8 @@ public struct API<
 	ZIPCodeSpecifiedFields: ZIPCodeFields & Fields,
 	FeatureSpecifiedFields: FeatureFields & Fields,
 	EnsembleSpecifiedFields: EnsembleFields & Fields,
-	CorpsSpecifiedFields: CorpsFields & Fields
+	CorpsSpecifiedFields: CorpsFields & Fields,
+	DivisionSpecifiedFields: DivisionFields & Fields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
@@ -46,7 +47,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -64,7 +66,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -82,7 +85,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -100,7 +104,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -118,7 +123,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -136,7 +142,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -154,7 +161,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -172,7 +180,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -190,7 +199,8 @@ public extension API {
 		Fields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -208,7 +218,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		Fields,
 		EnsembleSpecifiedFields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -226,7 +237,8 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		Fields,
-		CorpsSpecifiedFields
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -244,6 +256,26 @@ public extension API {
 		ZIPCodeSpecifiedFields,
 		FeatureSpecifiedFields,
 		EnsembleSpecifiedFields,
+		Fields,
+		DivisionSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingDivisionFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		VenueSpecifiedFields,
+		AddressSpecifiedFields,
+		ZIPCodeSpecifiedFields,
+		FeatureSpecifiedFields,
+		EnsembleSpecifiedFields,
+		CorpsSpecifiedFields,
 		Fields
 	> {
 		.init(endpoint: endpoint)
@@ -269,7 +301,8 @@ public extension API<
 	ZIPCode.IDFields,
 	Feature.IDFields,
 	Ensemble.IDFields,
-	Corps.IDFields
+	Corps.IDFields,
+	Division.IDFields
 > {
 	init(apiKey: String) {
 		self.init(key: apiKey)
