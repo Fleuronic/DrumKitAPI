@@ -347,6 +347,7 @@ extension API: Schematic {
 			[Performance.Identified].self,
 			[Placement.Identified].self,
 			[Division.Identified].self,
+			[Circuit.Identified].self,
 			[Feature.Identified].self
 		)
 	}
