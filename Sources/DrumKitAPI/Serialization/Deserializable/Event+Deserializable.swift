@@ -31,6 +31,14 @@ public extension Event.Identified.Container {
 		)
 	}
 
+	var detailsURL: URL? {
+		decode(for: .detailsURL)
+	}
+	
+	var scoresURL: URL? {
+		decode(for: .scoresURL)
+	}
+
 	var showContainer: Show.Identified.Container? {
 		try? nestedContainer(keyedBy: Show.Identified.Path.self, forKey: .show)
 	}
