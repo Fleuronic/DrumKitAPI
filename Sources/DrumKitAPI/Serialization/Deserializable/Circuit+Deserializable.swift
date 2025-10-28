@@ -19,7 +19,7 @@ public extension Circuit.Identified.Container {
 		decode(for: .name)
 	}
 
-	var abbreviation: String {
+	var abbreviation: String? {
 		decode(for: .abbreviation)
 	}
 }
