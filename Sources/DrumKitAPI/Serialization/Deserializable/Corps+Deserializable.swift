@@ -20,6 +20,14 @@ public extension Corps.Identified.Container {
 		decode(for: .name)
 	}
 
+	var url: URL? {
+		decode(for: .url)
+	}
+
+	var isActive: Bool {
+		decode(for: .isActive)
+	}
+
 	func location<T: LocationFields & Fields>() -> T {
 		decode(for: .location)
 	}
