@@ -22,4 +22,8 @@ public extension Circuit.Identified.Container {
 	var abbreviation: String? {
 		decode(for: .abbreviation)
 	}
+
+	var url: URL? {
+		decode(for: .url)
+	}
 }
