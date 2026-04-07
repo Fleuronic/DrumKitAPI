@@ -7,4 +7,5 @@ import protocol DrumKitService.EventSpec
 
 extension API: EventSpec where EventSpecifiedFields: Fields<Event.Identified> {
 	public typealias EventList = Results<EventSpecifiedFields>
+	public typealias EventFetch = SingleResult<EventSpecifiedFields?>
 }
