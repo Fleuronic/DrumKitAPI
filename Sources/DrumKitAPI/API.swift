@@ -28,7 +28,8 @@ public struct API<
 	EnsembleSpecifiedFields: EnsembleFields & Fields,
 	CorpsSpecifiedFields: CorpsFields & Fields,
 	DivisionSpecifiedFields: DivisionFields & Fields,
-	SlotSpecifiedFields: SlotFields & Fields
+	SlotSpecifiedFields: SlotFields & Fields,
+	PlacementSpecifiedFields: PlacementFields & Fields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
@@ -50,7 +51,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -70,7 +72,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -90,7 +93,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -110,7 +114,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -130,7 +135,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -150,7 +156,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -170,7 +177,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -190,7 +198,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -210,7 +219,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -230,7 +240,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -250,7 +261,8 @@ public extension API {
 		Fields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -270,7 +282,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		Fields,
 		DivisionSpecifiedFields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -290,7 +303,8 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		Fields,
-		SlotSpecifiedFields
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -310,6 +324,28 @@ public extension API {
 		EnsembleSpecifiedFields,
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
+		Fields,
+		PlacementSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingPlacementFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		VenueSpecifiedFields,
+		AddressSpecifiedFields,
+		ZIPCodeSpecifiedFields,
+		FeatureSpecifiedFields,
+		EnsembleSpecifiedFields,
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields,
+		SlotSpecifiedFields,
 		Fields
 	> {
 		.init(endpoint: endpoint)
@@ -337,7 +373,8 @@ public extension API<
 	Ensemble.IDFields,
 	Corps.IDFields,
 	Division.IDFields,
-	Slot.IDFields
+	Slot.IDFields,
+	Placement.IDFields
 > {
 	init(apiKey: String) {
 		self.init(key: apiKey)
