@@ -1,3 +1,5 @@
+// Copyright © Fleuronic LLC. All rights reserved.
+
 import struct DrumKit.Ensemble
 import protocol Catena.ResultProviding
 import protocol Catenoid.Fields

@@ -1,4 +1,4 @@
-
+// Copyright © Fleuronic LLC. All rights reserved.
 
 import struct DrumKit.Country
 import protocol Catena.ResultProviding

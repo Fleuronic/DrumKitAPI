@@ -1,3 +1,5 @@
+// Copyright © Fleuronic LLC. All rights reserved.
+
 import Foundation
 import struct DrumKit.Slot
 import struct DrumKit.Time
