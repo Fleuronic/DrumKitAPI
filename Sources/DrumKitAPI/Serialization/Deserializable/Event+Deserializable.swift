@@ -28,7 +28,7 @@ public extension Event.Identified.Container {
 			decode(for: .date),
 			strategy: Date.ParseStrategy(
 				format: "\(year: .defaultDigits)-\(month: .twoDigits)-\(day: .twoDigits)",
-				timeZone: TimeZone(secondsFromGMT: 0)!
+				timeZone: .current
 			)
 		)
 	}
