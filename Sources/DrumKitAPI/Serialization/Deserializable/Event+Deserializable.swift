@@ -28,7 +28,7 @@ public extension Event.Identified.Container {
 			decode(for: .date),
 			strategy: Date.ParseStrategy(
 				format: "\(year: .defaultDigits)-\(month: .twoDigits)-\(day: .twoDigits)",
-				timeZone: .current
+				timeZone: .gmt
 			)
 		)
 	}
@@ -36,7 +36,7 @@ public extension Event.Identified.Container {
 	var detailsURL: URL? {
 		decode(for: .detailsURL)
 	}
-	
+
 	var scoresURL: URL? {
 		decode(for: .scoresURL)
 	}
@@ -60,7 +60,7 @@ public extension Event.Identified.Container {
 	func venue<T: VenueFields & Fields>() -> T? {
 		decode(for: .venue)
 	}
-	
+
 	func slots<T: SlotFields & Fields>() -> [T] {
 		decode(for: .slots)
 	}
