@@ -1,5 +1,5 @@
 {
-  "originHash" : "95619713b8ad040db783095fd0522d23af64643bfc3005e6ffcf6e76b4fade1d",
+  "originHash" : "b8f691258648c67cfd47f19a503d48abb2d578af870cf3867751cc0b175bf6e2",
   "pins" : [
     {
       "identity" : "caesura",
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "912d76affb31853b78473715ee453e49f975ee0b"
+        "revision" : "d8b9a88a22aa979ba24a9e00c5b019447241666b"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/Fleuronic/Catenoid",
       "state" : {
         "branch" : "main",
-        "revision" : "431758293b1ccfa00cee15d4bba512f668c1bb2a"
+        "revision" : "51244f0cf720e9126ec9e8b0a601796d1be43a54"
       }
     },
     {
@@ -52,7 +52,7 @@
       "location" : "https://github.com/Fleuronic/DrumKit",
       "state" : {
         "branch" : "main",
-        "revision" : "0f7322c16ad9ac7915d8151058b26fff668c316f"
+        "revision" : "8a8ce70a5ee1b03cabd25df0eb1df91c5b854334"
       }
     },
     {
@@ -61,7 +61,7 @@
       "location" : "https://github.com/Fleuronic/DrumKitService",
       "state" : {
         "branch" : "main",
-        "revision" : "83923f69c87d691fbd2de8677805531e8cbbe4e1"
+        "revision" : "7c93b62112f65587645f8058d33110e1d61301f5"
       }
     },
     {
@@ -88,7 +88,7 @@
       "location" : "https://github.com/jordanekay/PersistDB",
       "state" : {
         "branch" : "master",
-        "revision" : "75c77914db0f316b2d7269b8521b4226900d812d"
+        "revision" : "c5b1b2fdf1a19e214d33f1657e57dd32eb5c8e0f"
       }
     },
     {
@@ -106,7 +106,7 @@
       "location" : "https://github.com/jordanekay/Schemata",
       "state" : {
         "branch" : "master",
-        "revision" : "776426b83cf9f11d9a88923388866f36504fda26"
+        "revision" : "da457ce5c61d9dad591919f4b159039c2a8819fd"
       }
     },
     {
