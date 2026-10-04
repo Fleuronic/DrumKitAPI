@@ -1,4 +1,4 @@
-// Copyright © Fleuronic LLC. All rights reserved.
+// Copyright © Fleuronic LLC. All rights reserved.
 
 import DrumKit
 import DrumKitService
@@ -29,7 +29,11 @@ public struct API<
 	CorpsSpecifiedFields: CorpsFields & Fields,
 	DivisionSpecifiedFields: DivisionFields & Fields,
 	SlotSpecifiedFields: SlotFields & Fields,
-	PlacementSpecifiedFields: PlacementFields & Fields
+	PlacementSpecifiedFields: PlacementFields & Fields,
+	CorpsEraSpecifiedFields: CorpsEraFields & Fields,
+	DivisionRankSpecifiedFields: DivisionRankFields & Fields,
+	DivisionSubordinationSpecifiedFields: DivisionSubordinationFields & Fields,
+	FeatureRoleSpecifiedFields: FeatureRoleFields & Fields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
@@ -52,7 +56,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -73,7 +81,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -94,7 +106,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -115,7 +131,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -136,7 +156,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -157,7 +181,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -178,7 +206,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -199,7 +231,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -220,7 +256,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -241,7 +281,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -262,7 +306,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -283,7 +331,11 @@ public extension API {
 		Fields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -304,7 +356,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		Fields,
 		SlotSpecifiedFields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -325,7 +381,11 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		Fields,
-		PlacementSpecifiedFields
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
 	> {
 		.init(endpoint: endpoint)
 	}
@@ -346,6 +406,110 @@ public extension API {
 		CorpsSpecifiedFields,
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
+		Fields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingCorpsEraFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		VenueSpecifiedFields,
+		AddressSpecifiedFields,
+		ZIPCodeSpecifiedFields,
+		FeatureSpecifiedFields,
+		EnsembleSpecifiedFields,
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields,
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields,
+		Fields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingDivisionRankFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		VenueSpecifiedFields,
+		AddressSpecifiedFields,
+		ZIPCodeSpecifiedFields,
+		FeatureSpecifiedFields,
+		EnsembleSpecifiedFields,
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields,
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		Fields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingDivisionSubordinationFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		VenueSpecifiedFields,
+		AddressSpecifiedFields,
+		ZIPCodeSpecifiedFields,
+		FeatureSpecifiedFields,
+		EnsembleSpecifiedFields,
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields,
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		Fields,
+		FeatureRoleSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingFeatureRoleFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		VenueSpecifiedFields,
+		AddressSpecifiedFields,
+		ZIPCodeSpecifiedFields,
+		FeatureSpecifiedFields,
+		EnsembleSpecifiedFields,
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields,
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
 		Fields
 	> {
 		.init(endpoint: endpoint)
@@ -374,7 +538,11 @@ public extension API<
 	Corps.IDFields,
 	Division.IDFields,
 	Slot.IDFields,
-	Placement.IDFields
+	Placement.IDFields,
+	CorpsEra.IDFields,
+	DivisionRank.IDFields,
+	DivisionSubordination.IDFields,
+	FeatureRole.IDFields
 > {
 	init(apiKey: String) {
 		self.init(key: apiKey)
