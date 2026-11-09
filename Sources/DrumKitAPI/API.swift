@@ -31,6 +31,7 @@ public struct API<
 	SlotSpecifiedFields: SlotFields & Fields,
 	PlacementSpecifiedFields: PlacementFields & Fields,
 	CorpsEraSpecifiedFields: CorpsEraFields & Fields,
+	VenueEraSpecifiedFields: VenueEraFields & Fields,
 	DivisionRankSpecifiedFields: DivisionRankFields & Fields,
 	DivisionSubordinationSpecifiedFields: DivisionSubordinationFields & Fields,
 	FeatureRoleSpecifiedFields: FeatureRoleFields & Fields
@@ -58,6 +59,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -83,6 +85,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -108,6 +111,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -133,6 +137,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -158,6 +163,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -183,6 +189,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -208,6 +215,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -233,6 +241,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -258,6 +267,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -283,6 +293,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -308,6 +319,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -333,6 +345,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -358,6 +371,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -383,6 +397,7 @@ public extension API {
 		Fields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -408,6 +423,7 @@ public extension API {
 		SlotSpecifiedFields,
 		Fields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -432,6 +448,33 @@ public extension API {
 		DivisionSpecifiedFields,
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
+		Fields,
+		VenueEraSpecifiedFields,
+		DivisionRankSpecifiedFields,
+		DivisionSubordinationSpecifiedFields,
+		FeatureRoleSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
+
+	func specifyingVenueEraFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		EventSpecifiedFields,
+		LocationSpecifiedFields,
+		StateSpecifiedFields,
+		CountrySpecifiedFields,
+		CircuitSpecifiedFields,
+		ShowSpecifiedFields,
+		VenueSpecifiedFields,
+		AddressSpecifiedFields,
+		ZIPCodeSpecifiedFields,
+		FeatureSpecifiedFields,
+		EnsembleSpecifiedFields,
+		CorpsSpecifiedFields,
+		DivisionSpecifiedFields,
+		SlotSpecifiedFields,
+		PlacementSpecifiedFields,
+		CorpsEraSpecifiedFields,
 		Fields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
@@ -458,6 +501,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		Fields,
 		DivisionSubordinationSpecifiedFields,
 		FeatureRoleSpecifiedFields
@@ -483,6 +527,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		Fields,
 		FeatureRoleSpecifiedFields
@@ -508,6 +553,7 @@ public extension API {
 		SlotSpecifiedFields,
 		PlacementSpecifiedFields,
 		CorpsEraSpecifiedFields,
+		VenueEraSpecifiedFields,
 		DivisionRankSpecifiedFields,
 		DivisionSubordinationSpecifiedFields,
 		Fields
@@ -540,6 +586,7 @@ public extension API<
 	Slot.IDFields,
 	Placement.IDFields,
 	CorpsEra.IDFields,
+	VenueEra.IDFields,
 	DivisionRank.IDFields,
 	DivisionSubordination.IDFields,
 	FeatureRole.IDFields
@@ -579,6 +626,7 @@ extension API: Schematic {
 			Division.Identified.self,
 			Feature.Identified.self,
 			CorpsEra.Identified.self,
+			VenueEra.Identified.self,
 			DivisionRank.Identified.self,
 			DivisionSubordination.Identified.self,
 			FeatureRole.Identified.self,
