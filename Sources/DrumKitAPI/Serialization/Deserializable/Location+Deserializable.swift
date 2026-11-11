@@ -23,6 +23,10 @@ public extension Location.Identified.Container {
 		decode(for: .city)
 	}
 
+	var timeZone: String? {
+		decode(for: .timeZone)
+	}
+
 	var stateContainer: State.Identified.Container {
 		try! nestedContainer(keyedBy: State.Identified.Path.self, forKey: .state)
 	}
