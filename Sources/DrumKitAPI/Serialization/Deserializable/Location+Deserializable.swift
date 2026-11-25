@@ -8,6 +8,7 @@ import struct Catena.IDFields
 import protocol Catenary.Fields
 import protocol Catenary.Deserializable
 import protocol DrumKitService.StateFields
+import protocol DrumKitService.CountryFields
 
 extension Location.Identified: Catenary.Deserializable {
 	public typealias Container = KeyedDecodingContainer<Path>
@@ -31,7 +32,11 @@ public extension Location.Identified.Container {
 		try! nestedContainer(keyedBy: State.Identified.Path.self, forKey: .state)
 	}
 
-	func state<T: StateFields & Fields>() -> T {
-		decode(for: .state)
+	func state<T: StateFields & Fields>() -> T? {
+		try! decodeIfPresent(T.self, forKey: .state)
+	}
+
+	func country<T: CountryFields & Fields>() -> T? {
+		try! decodeIfPresent(T.self, forKey: .country)
 	}
 }
