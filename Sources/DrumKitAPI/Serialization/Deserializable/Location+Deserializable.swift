@@ -19,7 +19,7 @@ extension Location.Identified: Catenary.Deserializable {
 
 // MARK: -
 public extension Location.Identified.Container {
-	var city: String {
+	var city: String? {
 		decode(for: .city)
 	}
 
